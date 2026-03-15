@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="images/icon.png">
+<link rel="apple-touch-icon" href="images/icon.png">
+<title>Cannot DNM — Listing #7f3a9c2e</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SVGフィルター（SOLDかすれ） -->
+
+<svg class="svg-filters">
+  <defs>
+    <filter id="roughen">
+      <feTurbulence type="fractalNoise" baseFrequency="0.065" numOctaves="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- ══ パスワードゲート（直書き）══ -->
+
+<div id="passGate" style="
+  position:fixed;inset:0;z-index:9999;
+  background:rgba(5,5,7,0.88);
+  display:flex;align-items:center;justify-content:center;
+">
+  <div style="
+    width:420px;max-width:92vw;
+    background:rgba(10,10,13,.96);
+    border:1px solid #202028;
+    box-shadow:0 0 40px rgba(0,255,136,.04);
+    padding:32px 28px 36px;
+    text-align:center;
+  ">
+    <div style="font-family:'VT323',monospace;font-size:38px;color:#00ff88;letter-spacing:4px;margin-bottom:6px;text-shadow:0 0 12px #00bb6644;">Cannot DNM</div>
+    <div style="font-size:9px;color:#334433;letter-spacing:3px;text-transform:uppercase;margin-bottom:24px;font-family:'Share Tech Mono',monospace;">AUTHENTICATION REQUIRED</div>
+    <div style="font-size:11px;color:#334433;letter-spacing:1px;margin-bottom:20px;font-family:'Share Tech Mono',monospace;">ENTER ACCESS CREDENTIALS TO CONTINUE</div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+      <span style="font-family:'Share Tech Mono',monospace;font-size:11px;color:#00bb66;width:52px;text-align:left;flex-shrink:0;letter-spacing:1px;">PASS:</span>
+      <input id="passInput" type="password" placeholder="••••••••"
+        style="flex:1;background:transparent;border:none;
+               border-bottom:1px solid #202028;
+               color:#00ff88;font-family:'Source Code Pro',monospace;
+               font-size:13px;letter-spacing:3px;padding:6px 2px;
+               outline:none;caret-color:#00ff88;">
+    </div>
+    <div id="passError" style="font-size:10px;color:#dd2222;letter-spacing:1px;min-height:18px;margin-bottom:12px;font-family:'Share Tech Mono',monospace;"></div>
+    <button id="passBtn"
+      style="width:100%;padding:11px 0;
+             background:transparent;
+             border:1px solid #00bb66;color:#00ff88;
+             font-family:'VT323',monospace;font-size:22px;
+             letter-spacing:5px;cursor:pointer;
+             transition:background .15s;">
+      [ CONNECT ]
+    </button>
+    <div style="margin-top:16px;font-size:9px;color:#1a2a1a;letter-spacing:1px;line-height:2;font-family:'Share Tech Mono',monospace;">
+      cnndn3x7fq2kv9m.onion · VAULT PROTECTED · NO TRACES
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  function checkPass() {
+    var val = document.getElementById('passInput').value;
+    if (val === 'hillock7') {
+      document.getElementById('passGate').style.display = 'none';
+    } else {
+      document.getElementById('passError').textContent = '> ACCESS DENIED — INVALID CREDENTIALS';
+      document.getElementById('passInput').value = '';
+      document.getElementById('passInput').focus();
+    }
+  }
+  document.getElementById('passBtn').addEventListener('click', checkPass);
+  document.getElementById('passInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') checkPass();
+  });
+})();
+</script>
+
+<div class="noise-overlay"></div>
+<div class="scanline"></div>
+
+<div class="page">
+
+<!-- BROWSER BAR -->
+
+<div class="browser-bar">
+  <div class="browser-dots">
+    <div class="browser-dot r"></div>
+    <div class="browser-dot y"></div>
+    <div class="browser-dot g"></div>
+  </div>
+  <div class="browser-url-bar">
+    <span class="url-lock">⬤</span>
+    <span class="url-text">
+      <em>cnndn3x7fq2kv9m.onion</em>/listing/7f3a9c2e
+    </span>
+  </div>
+  <div class="browser-status">ONION CIRCUIT: ACTIVE · 3 NODES</div>
+</div>
+
+<!-- HEADER -->
+
+<header class="site-header">
+  <div class="header-ticker">
+    <span class="ticker-alert">▸ ██ wgah'nagl ████ — th' ██████ hath no ████ for those who ██ beyond th' ████ veil</span>
+    <span>BLOCK HEIGHT: #774,832</span>
+  </div>
+  <div class="header-main">
+    <div class="logo-area">
+      <!-- サイトアイコン: images/icon.png (3:4比率・透過PNG) -->
+      <div class="logo-icon-wrap">
+        <img src="images/icon.png" alt=""
+             onerror="this.style.display='none'">
+      </div>
+      <div class="site-logo">
+        <div class="logo-name">Cannot DNM</div>
+        <div class="logo-tagline">The market beyond the veil</div>
+      </div>
+    </div>
+    <nav class="header-nav">
+      <a href="#">Market</a>
+      <a href="#">Vendors</a>
+      <a href="#">Orders</a>
+      <a href="#">Forum</a>
+      <a href="#">Canary</a>
+    </nav>
+    <div class="header-user">
+      <span class="user-badge">user_9f3b1</span>
+      <span class="ogi-balance">Balance: <span>0.0412 OGI</span></span>
+    </div>
+  </div>
+</header>
+
+<!-- NODE BAR -->
+
+<div class="node-bar">
+  <span>ROUTE:</span>
+  <span class="node active">NODE_01</span>
+  <span class="node-arrow">→</span>
+  <span class="node active">NODE_02</span>
+  <span class="node-arrow">→</span>
+  <span class="node active">NODE_03</span>
+  <span class="node-arrow">→</span>
+  <span class="node-dest">DEST</span>
+  <span style="margin-left:auto">LATENCY: 340ms · ENCRYPTED · ANONYMOUS</span>
+</div>
+
+<!-- WARNING BANNER -->
+
+<div class="warning-banner">
+  <span class="w-item hot">⚠ VERIFY EPK BEFORE PURCHASE</span>
+  <span class="w-item">ALL TRANSACTIONS FINAL</span>
+  <span class="w-item hot">VAULT PROTECTION ACTIVE</span>
+  <span class="w-item">DO NOT FINALIZE EARLY</span>
+</div>
+
+<!-- BREADCRUMB -->
+
+<div class="breadcrumb">
+  <a href="#">Market</a>
+  <span class="sep">›</span>
+  <a href="#">Lewd Goods</a>
+  <span class="sep">›</span>
+  <a href="#">Worn Garments</a>
+  <span class="sep">›</span>
+  White Lace Lingerie Pants
+</div>
+
+<!-- CONTENT -->
+
+<main class="content">
+
+  <div class="meta-row">
+    <span class="tx-id">TX: <span>7f3a9c2e4b1d8a0f3e6c2d9b5a1f7e4c</span></span>
+    <span class="listing-date-top">LISTED: <span>June 12, 1097</span></span>
+  </div>
+
+  <div class="product-layout">
+
+```
+<!-- 左: 写真 -->
+<div class="product-img-outer">
+  <div class="product-img-wrap">
+    <img src="images/vendor.jpg" alt="listing"
+         onerror="this.style.display='none'">
+    <div class="img-placeholder">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none"
+           stroke="#1a3a2a" stroke-width="1">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <circle cx="8.5" cy="8.5" r="1.5"/>
+        <polyline points="21 15 16 10 5 21"/>
+      </svg>
+      <span>IMAGE REDACTED</span>
+    </div>
+    <div class="sold-stamp-wrap">
+      <div class="sold-stamp">SOLD</div>
+    </div>
+  </div>
+  <div class="img-caption">
+    LISTING ID: 7f3a9c2e · EPK VERIFIED · VAULT ESCROW ONLY<br>
+    IMAGES MAY BE SUBJECT TO VENDOR OBFUSCATION
+  </div>
+</div>
+
+<!-- 右: 商品情報 -->
+<div style="min-width:0;overflow:hidden;">
+
+  <div class="product-category">
+    Market <span>›</span> Lewd Goods <span>›</span> Worn Garments
+  </div>
+
+  <div class="product-title">
+    <span class="sold-tag">[SOLD]</span>
+    White Lace Lingerie Pants — Worn &amp; Sealed
+  </div>
+
+  <div class="price-block">
+    <div class="price-row">
+      <span class="price-main">0.0031 OGI</span>
+      <span class="price-unit">OG INGOT</span>
+    </div>
+    <div class="price-equiv">
+      Secondary unit: <span>0.071 OGI (fractional)</span>
+    </div>
+    <div class="countdown-row">
+      LISTING EXPIRES: <span>--:--:--</span>
+    </div>
+  </div>
+
+  <div class="vendor-block">
+    <div class="vendor-icon">V</div>
+    <div>
+      <div class="vendor-name">vendor_e7c2a</div>
+      <div class="vendor-meta">VERIFIED · 193 TRANSACTIONS · STEALTH SHIPPING · VAULT ONLY</div>
+    </div>
+  </div>
+
+  <div class="desc-block">
+    <div class="block-label">// LISTING DESCRIPTION</div>
+    <div class="desc-text">
+      My ex's white lace panties.
+      She wore these for <span class="hl">3 days straight</span> —
+      you can imagine the rest.<br>
+      Took them before she noticed.
+      <span class="hl">Sealed fresh.</span>
+      One pair only.<br><br>
+      She has <span class="hl">absolutely no clue.</span><br>
+      Don't ask me anything. Just buy.
+    </div>
+  </div>
+
+  <!-- Jane Willow補足 -->
+  <div class="source-block">
+    <div class="block-label">// SUBJECT PROFILE</div>
+    <div class="source-inner">
+      <div class="source-photo">
+        <img src="images/jane.jpg" alt="Jane Willow"
+             onerror="this.style.display='none'">
+        <div class="source-photo-ph">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+               stroke="#1a3a2a" stroke-width="1.2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+      </div>
+      <div class="source-info">
+        <div class="source-name">Jane Willow</div>
+        <div class="source-role">REGISTERED MODEL — EXTERNAL SOURCE</div>
+        <a class="source-link"
+           href="https://tadokoroikishima-ops.github.io/teatime-hill-willowVC10/profile.html"
+           target="_blank" rel="noopener noreferrer">
+          SOURCE: terra's-finest.com/models/jane-willow ↗
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="epk-block">
+    <div class="block-label">// VENDOR EPK (ENCRYPTED PUBLIC KEY)</div>
+    <div class="epk-box">
+```
+
+—–BEGIN EPK PUBLIC KEY BLOCK—–
+mQINBF7x9AABEAD3kZx92mVqP1nT7fWoLcXa8BvYm3Rq
+Kp2nZoE4dXyV6hUwLm9sRtGbN1cQ8fPjAeKvM0TlDsYi
+xH7uBnCp3WoRqAzMt5VkJeN2Xs8LbFgQdYpTwUcHmRvE
+4f9aN2bXcVpQeL7mDsKjRtHwYuFoIgNzBkMxPvCaTlSd
+…truncated for operational security…
+—–END EPK PUBLIC KEY BLOCK—–
+</div>
+</div>
+
+```
+  <div class="msg-block">
+    <div class="block-label">// SEND ENCRYPTED MESSAGE TO VENDOR</div>
+    <div class="msg-input-wrap">
+      <span class="msg-prefix">EPK_MSG ›</span>
+      <input class="msg-input" id="msgInput" type="text"
+             placeholder="TYPE ENCRYPTED MESSAGE TO VENDOR..."
+             onkeydown="if(event.key==='Enter') sendMsg()">
+      <button class="msg-send" onclick="sendMsg()">SEND</button>
+    </div>
+  </div>
+
+  <div class="vault-block">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="1.5">
+      <rect x="3" y="11" width="18" height="11" rx="2"/>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      <circle cx="12" cy="16" r="1"/>
+    </svg>
+    <span>VAULT PROTECTION ACTIVE — FUNDS HELD UNTIL DELIVERY CONFIRMED BY BUYER</span>
+  </div>
+
+</div>
+```
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-onion">cnndn3x7fq2kv9m.onion</div>
+  CANNOT DNM · NO LOGS · NO TRACES · ALL CONNECTIONS ENCRYPTED<br>
+  DO NOT ACCESS FROM CLEARNET · USE ONION BROWSER ONLY
+  <div class="footer-quote">
+    "██ wgah'nagl ████ fhtagn —<br>
+    th' ██████ hath no ████ for those who ██ beyond<br>
+    th' ████ veil of ██████."
+  </div>
+</footer>
+
+</div><!-- /page -->
+<script>
+/* ═══════════════════════════════════════════
+   Cannot DNM — bg.js  v3
+   渦巻き + 四方から触手（完全書き直し）
+═══════════════════════════════════════════ */
+(function () {
+
+/* ── Canvas 作成 ── */
+var cv  = document.createElement(‘canvas’);
+cv.id   = ‘bgCanvas’;
+cv.style.position      = ‘fixed’;
+cv.style.top           = ‘0’;
+cv.style.left          = ‘0’;
+cv.style.width         = ‘100%’;
+cv.style.height        = ‘100%’;
+cv.style.zIndex        = ‘0’;
+cv.style.pointerEvents = ‘none’;
+document.body.appendChild(cv);
+
+var ctx = cv.getContext(‘2d’);
+var W = 0, H = 0;
+var t = 0;
+
+function resize() {
+W = cv.width  = window.innerWidth;
+H = cv.height = window.innerHeight;
+}
+window.addEventListener(‘resize’, resize);
+resize();
+
+var G  = ‘0,255,136’;
+var GD = ‘0,160,80’;
+
+/* ═══════════════════════════
+渦巻き
+═══════════════════════════ */
+function drawVortex() {
+var cx = W * 0.5, cy = H * 0.5;
+var maxR = Math.min(W, H) * 0.5;
+var arms = 6, lines = 38;
+
+```
+for (var a = 0; a < arms; a++) {
+  var aOff = (a / arms) * Math.PI * 2;
+  for (var li = 0; li < lines; li++) {
+    var p    = li / lines;
+    var seed = a * 1000 + li * 7;
+    var wob  = Math.sin(seed * 0.31 + t * 0.38) * 0.20
+             + Math.cos(seed * 0.71 + t * 0.23) * 0.10;
+
+    var ang0 = aOff + p * Math.PI * 3.6 + t * 0.10 + wob;
+    var r0   = maxR * (0.06 + p * 0.94);
+    var x0   = cx + Math.cos(ang0) * r0;
+    var y0   = cy + Math.sin(ang0) * r0;
+
+    var ang1 = ang0 + Math.PI * 0.32 + wob * 0.4;
+    var r1   = r0 * (0.60 + Math.sin(t * 0.28 + seed) * 0.06);
+    var x1   = cx + Math.cos(ang1) * r1;
+    var y1   = cy + Math.sin(ang1) * r1;
+
+    var cpA = (ang0 + ang1) * 0.5 + 0.38;
+    var cpR = (r0 + r1) * 0.5 * (1.08 + Math.sin(t * 0.19 + seed) * 0.10);
+    var cpx = cx + Math.cos(cpA) * cpR;
+    var cpy = cy + Math.sin(cpA) * cpR;
+
+    var al = (0.10 + p * 0.06) * (0.65 + Math.sin(t * 0.5 + seed) * 0.35);
+    var lw = 0.45 + (1 - p) * 1.1;
+
+    ctx.beginPath();
+    ctx.moveTo(x0, y0);
+    ctx.quadraticCurveTo(cpx, cpy, x1, y1);
+    ctx.strokeStyle = 'rgba(' + G + ',' + al + ')';
+    ctx.lineWidth   = lw;
+    ctx.stroke();
+  }
+}
+```
+
+}
+
+/* ═══════════════════════════
+触手データ
+edge: 0=上 1=下 2=左 3=右 4=左上 5=右上 6=左下 7=右下
+═══════════════════════════ */
+var tentDefs = [
+{ edge:0, frac:0.20, baseAng: Math.PI*0.50, seed:10,  spd:0.008, len:0.26, thick:4.5 },
+{ edge:0, frac:0.50, baseAng: Math.PI*0.48, seed:27,  spd:0.007, len:0.30, thick:5.0 },
+{ edge:0, frac:0.80, baseAng: Math.PI*0.52, seed:43,  spd:0.009, len:0.24, thick:4.0 },
+{ edge:1, frac:0.15, baseAng:-Math.PI*0.50, seed:110, spd:0.007, len:0.28, thick:4.5 },
+{ edge:1, frac:0.50, baseAng:-Math.PI*0.52, seed:127, spd:0.009, len:0.32, thick:5.5 },
+{ edge:1, frac:0.80, baseAng:-Math.PI*0.48, seed:143, spd:0.008, len:0.25, thick:4.0 },
+{ edge:2, frac:0.20, baseAng: Math.PI*0.02, seed:210, spd:0.008, len:0.27, thick:4.0 },
+{ edge:2, frac:0.55, baseAng:-Math.PI*0.03, seed:227, spd:0.007, len:0.31, thick:5.0 },
+{ edge:2, frac:0.80, baseAng: Math.PI*0.04, seed:243, spd:0.009, len:0.24, thick:4.5 },
+{ edge:3, frac:0.25, baseAng: Math.PI*1.01, seed:310, spd:0.007, len:0.28, thick:4.5 },
+{ edge:3, frac:0.55, baseAng: Math.PI*0.99, seed:327, spd:0.009, len:0.30, thick:5.0 },
+{ edge:3, frac:0.80, baseAng: Math.PI*1.02, seed:343, spd:0.008, len:0.25, thick:4.0 },
+{ edge:4, frac:0, baseAng: Math.PI*0.22, seed:400, spd:0.007, len:0.30, thick:5.0 },
+{ edge:4, frac:0, baseAng: Math.PI*0.30, seed:405, spd:0.009, len:0.25, thick:4.0 },
+{ edge:5, frac:0, baseAng: Math.PI*0.72, seed:410, spd:0.008, len:0.28, thick:5.0 },
+{ edge:5, frac:0, baseAng: Math.PI*0.80, seed:415, spd:0.007, len:0.24, thick:4.0 },
+{ edge:6, frac:0, baseAng:-Math.PI*0.22, seed:420, spd:0.009, len:0.30, thick:5.0 },
+{ edge:6, frac:0, baseAng:-Math.PI*0.30, seed:425, spd:0.007, len:0.25, thick:4.0 },
+{ edge:7, frac:0, baseAng:-Math.PI*0.72, seed:430, spd:0.008, len:0.28, thick:5.0 },
+{ edge:7, frac:0, baseAng:-Math.PI*0.80, seed:435, spd:0.009, len:0.24, thick:4.0 }
+];
+
+function getOrigin(d) {
+switch (d.edge) {
+case 0: return [W * d.frac, 0];
+case 1: return [W * d.frac, H];
+case 2: return [0, H * d.frac];
+case 3: return [W, H * d.frac];
+case 4: return [0, 0];
+case 5: return [W, 0];
+case 6: return [0, H];
+case 7: return [W, H];
+default: return [0, 0];
+}
+}
+
+function drawTentacle(d) {
+var o  = getOrigin(d);
+var ox = o[0], oy = o[1];
+var L  = Math.min(W, H) * d.len;
+var ph = d.seed * 0.017 + t * d.spd * 60;
+var seg = 22;
+var pts = [];
+
+```
+for (var i = 0; i <= seg; i++) {
+  var fr  = i / seg;
+  var ang = d.baseAng
+          + Math.sin(ph + fr * Math.PI * 2.1) * 0.58
+          + Math.cos(ph * 0.68 + fr * Math.PI * 1.5 + d.seed * 0.01) * 0.30
+          + Math.sin(ph * 1.25 + fr * Math.PI * 3.2 + d.seed * 0.003) * 0.14;
+  var dist = fr * L;
+  pts.push([ox + Math.cos(ang) * dist, oy + Math.sin(ang) * dist]);
+}
+
+for (var j = 0; j < pts.length - 1; j++) {
+  var fr2   = j / (pts.length - 1);
+  var taper = Math.pow(1 - fr2, 0.52);
+  var al    = (0.18 + taper * 0.18) * (0.75 + Math.sin(ph + j * 0.4) * 0.25);
+  var lw    = Math.max(0.3, d.thick * taper);
+
+  ctx.beginPath();
+  ctx.moveTo(pts[j][0],   pts[j][1]);
+  ctx.lineTo(pts[j+1][0], pts[j+1][1]);
+  ctx.strokeStyle = 'rgba(' + G + ',' + al + ')';
+  ctx.lineWidth   = lw;
+  ctx.lineCap     = 'round';
+  ctx.stroke();
+}
+
+for (var k = 3; k < pts.length - 2; k += 3) {
+  var fr3    = k / (pts.length - 1);
+  var taper3 = Math.pow(1 - fr3, 0.52);
+  var sr     = d.thick * taper3 * 0.36;
+  if (sr < 0.5) continue;
+  var al3 = 0.20 * taper3;
+
+  ctx.beginPath();
+  ctx.arc(pts[k][0], pts[k][1], sr, 0, Math.PI * 2);
+  ctx.fillStyle = 'rgba(' + GD + ',' + al3 + ')';
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.arc(pts[k][0], pts[k][1], sr, 0, Math.PI * 2);
+  ctx.strokeStyle = 'rgba(' + G + ',' + (al3 * 1.5) + ')';
+  ctx.lineWidth   = 0.45;
+  ctx.stroke();
+}
+
+var last  = pts[pts.length - 1];
+var prev  = pts[Math.max(0, pts.length - 4)];
+var tipR  = d.thick * 0.20;
+if (tipR > 0.8) {
+  var ta = Math.atan2(last[1] - prev[1], last[0] - prev[0]);
+  ctx.beginPath();
+  ctx.arc(
+    last[0] + Math.cos(ta + Math.PI * 0.5) * tipR,
+    last[1] + Math.sin(ta + Math.PI * 0.5) * tipR,
+    tipR, 0, Math.PI * 2
+  );
+  ctx.fillStyle = 'rgba(' + G + ',0.09)';
+  ctx.fill();
+}
+```
+
+}
+
+/* ── メインループ ── */
+function loop() {
+ctx.clearRect(0, 0, W, H);
+drawVortex();
+for (var i = 0; i < tentDefs.length; i++) {
+drawTentacle(tentDefs[i]);
+}
+t += 0.016;
+requestAnimationFrame(loop);
+}
+
+loop();
+
+})();
+
+</script>
+<script src="app.js"></script>
+</body>
+</html>
