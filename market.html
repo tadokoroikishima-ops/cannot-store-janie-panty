@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Cannot DNM — Listing #7f3a9c2e</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══ PASSWORD GATE（直書き・JS最小限）══ -->
+
+<div id="passGate" style="
+  position:fixed; inset:0; z-index:9999;
+  background:#050507;
+  display:flex; align-items:center; justify-content:center;
+">
+  <div style="
+    width:420px; max-width:92vw;
+    background:#0a0a0d;
+    border:1px solid #202028;
+    box-shadow:0 0 40px rgba(0,255,136,.04);
+    padding:32px 28px 36px;
+    text-align:center;
+  ">
+    <div style="font-family:'VT323',monospace;font-size:36px;color:#00ff88;letter-spacing:4px;margin-bottom:6px;text-shadow:0 0 10px #00bb6644;">Cannot DNM</div>
+    <div style="font-size:9px;color:#334433;letter-spacing:3px;text-transform:uppercase;margin-bottom:24px;font-family:'Share Tech Mono',monospace;">AUTHENTICATION REQUIRED</div>
+    <div style="font-size:11px;color:#334433;letter-spacing:1px;margin-bottom:20px;">ENTER ACCESS CREDENTIALS TO CONTINUE</div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+      <span style="font-family:'Share Tech Mono',monospace;font-size:11px;color:#00bb66;width:52px;text-align:left;flex-shrink:0;">PASS:</span>
+      <input id="passInput" type="password" placeholder="••••••••"
+        style="flex:1;background:transparent;border:none;border-bottom:1px solid #202028;
+               color:#00ff88;font-family:'Source Code Pro',monospace;font-size:13px;
+               letter-spacing:3px;padding:6px 2px;outline:none;caret-color:#00ff88;">
+    </div>
+    <div id="passError" style="font-size:10px;color:#dd2222;letter-spacing:1px;min-height:18px;margin-bottom:12px;font-family:'Share Tech Mono',monospace;"></div>
+    <button id="passBtn"
+      style="width:100%;padding:11px 0;background:transparent;
+             border:1px solid #00bb66;color:#00ff88;
+             font-family:'VT323',monospace;font-size:20px;
+             letter-spacing:5px;cursor:pointer;">
+      [ CONNECT ]
+    </button>
+    <div style="margin-top:16px;font-size:9px;color:#1a2a1a;letter-spacing:1px;line-height:2;font-family:'Share Tech Mono',monospace;">
+      cnndn3x7fq2kv9m.onion · VAULT PROTECTED · NO TRACES
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  function checkPass() {
+    var val = document.getElementById('passInput').value;
+    if (val === 'hillock7') {
+      document.getElementById('passGate').style.display = 'none';
+    } else {
+      document.getElementById('passError').textContent = '> ACCESS DENIED — INVALID CREDENTIALS';
+      document.getElementById('passInput').value = '';
+      document.getElementById('passInput').focus();
+    }
+  }
+  document.getElementById('passBtn').addEventListener('click', checkPass);
+  document.getElementById('passInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') checkPass();
+  });
+})();
+</script>
+
+<!-- SVGフィルター（SOLDスタンプかすれ） -->
+
+<svg class="svg-filters">
+  <defs>
+    <filter id="roughen">
+      <feTurbulence type="fractalNoise" baseFrequency="0.065" numOctaves="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- 背景レイヤー -->
+
+<div class="bg-layer">
+  <div class="bg-noise"></div>
+  <div class="vortex-outer">
+    <svg width="900" height="900" viewBox="-450 -450 900 900" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#00ff88" stroke-width="0.8">
+        <ellipse rx="420" ry="400" cx="0" cy="0"/>
+        <ellipse rx="340" ry="360" cx="10" cy="-10"/>
+        <ellipse rx="260" ry="280" cx="-8" cy="8"/>
+        <ellipse rx="180" ry="200" cx="6" cy="-6"/>
+        <ellipse rx="100" ry="110" cx="-4" cy="4"/>
+        <path d="M0,0 Q80,-200 160,-380 Q200,-420 220,-440"/>
+        <path d="M0,0 Q-180,-80 -360,-160 Q-410,-190 -440,-200"/>
+        <path d="M0,0 Q60,200 80,390 Q90,420 100,440"/>
+        <path d="M0,0 Q200,60 390,40 Q430,35 440,30"/>
+        <path d="M0,0 Q-60,-180 -100,-370 Q-110,-410 -120,-430"/>
+        <path d="M0,0 Q180,100 340,200 Q390,230 420,240"/>
+        <line x1="0" y1="0" x2="0" y2="-430"/>
+        <line x1="0" y1="0" x2="430" y2="0"/>
+        <line x1="0" y1="0" x2="-430" y2="0"/>
+        <line x1="0" y1="0" x2="0" y2="430"/>
+        <line x1="0" y1="0" x2="304" y2="-304"/>
+        <line x1="0" y1="0" x2="-304" y2="304"/>
+        <line x1="0" y1="0" x2="304" y2="304"/>
+        <line x1="0" y1="0" x2="-304" y2="-304"/>
+      </g>
+    </svg>
+  </div>
+  <div class="vortex-inner">
+    <svg width="500" height="500" viewBox="-250 -250 500 500" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#00ff88" stroke-width="0.6">
+        <ellipse rx="230" ry="220" cx="5" cy="-5"/>
+        <ellipse rx="160" ry="170" cx="-4" cy="4"/>
+        <ellipse rx="90" ry="100" cx="3" cy="-3"/>
+        <path d="M0,0 Q60,-140 100,-230"/>
+        <path d="M0,0 Q-140,-60 -230,-100"/>
+        <path d="M0,0 Q-60,140 -100,230"/>
+        <path d="M0,0 Q140,60 230,100"/>
+        <polygon points="0,-200 173,100 -173,100"/>
+        <polygon points="0,200 173,-100 -173,-100"/>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<div class="scanline"></div>
+
+<div class="page">
+
+<!-- ══ BROWSER BAR ══ -->
+
+<div class="browser-bar">
+  <div class="browser-dots">
+    <div class="browser-dot r"></div>
+    <div class="browser-dot y"></div>
+    <div class="browser-dot g"></div>
+  </div>
+  <div class="browser-url-bar">
+    <span class="url-lock">⬤</span>
+    <span class="url-text">
+      <em>cnndn3x7fq2kv9m.onion</em>/listing/7f3a9c2e
+    </span>
+  </div>
+  <div class="browser-status">ONION CIRCUIT: ACTIVE · 3 NODES</div>
+</div>
+
+<!-- ══ SITE HEADER ══ -->
+
+<header class="site-header">
+  <div class="header-ticker">
+    <span class="ticker-alert">▸ ██ wgah'nagl ████ — th' ██████ hath no ████ for those who ██ beyond th' ████ veil</span>
+    <span>BLOCK HEIGHT: #774,832</span>
+  </div>
+  <div class="header-main">
+    <div class="site-logo">
+      <div class="logo-name">Cannot DNM</div>
+      <div class="logo-tagline">The market beyond the veil</div>
+    </div>
+    <nav class="header-nav">
+      <a href="#">Market</a>
+      <a href="#">Vendors</a>
+      <a href="#">Orders</a>
+      <a href="#">Forum</a>
+      <a href="#">Canary</a>
+    </nav>
+    <div class="header-user">
+      <span class="user-badge">user_9f3b1</span>
+      <span class="ogi-balance">Balance: <span>0.0412 OGI</span></span>
+    </div>
+  </div>
+</header>
+
+<!-- ══ NODE DISPLAY ══ -->
+
+<div class="node-bar">
+  <span>ROUTE:</span>
+  <span class="node active">NODE_01</span>
+  <span class="node-arrow">→</span>
+  <span class="node active">NODE_02</span>
+  <span class="node-arrow">→</span>
+  <span class="node active">NODE_03</span>
+  <span class="node-arrow">→</span>
+  <span class="node-dest">DEST</span>
+  <span style="margin-left:auto">LATENCY: 340ms · ENCRYPTED · ANONYMOUS</span>
+</div>
+
+<!-- ══ WARNING BANNER ══ -->
+
+<div class="warning-banner">
+  <span class="w-item hot">⚠ VERIFY EPK BEFORE PURCHASE</span>
+  <span class="w-item">ALL TRANSACTIONS FINAL</span>
+  <span class="w-item hot">VAULT PROTECTION ACTIVE</span>
+  <span class="w-item">DO NOT FINALIZE EARLY</span>
+</div>
+
+<!-- ══ BREADCRUMB ══ -->
+
+<div class="breadcrumb">
+  <a href="#">Market</a>
+  <span class="sep">›</span>
+  <a href="#">Lewd Goods</a>
+  <span class="sep">›</span>
+  <a href="#">Worn Garments</a>
+  <span class="sep">›</span>
+  White Lace Lingerie Pants
+</div>
+
+<!-- ══ MAIN ══ -->
+
+<main class="content">
+
+  <!-- TX / META -->
+
+  <div class="meta-row">
+    <span class="tx-id">TX: <span>7f3a9c2e4b1d8a0f3e6c2d9b5a1f7e4c</span></span>
+    <span class="listing-date-top">LISTED: <span>June 12, 1097</span></span>
+  </div>
+
+  <div class="product-layout">
+
+```
+<!-- 左: 写真 -->
+<div class="product-img-outer">
+  <div class="product-img-wrap">
+
+    <!-- 商品写真: images/vendor.jpg -->
+    <img src="images/vendor.jpg" alt="listing"
+         onerror="this.style.display='none'">
+
+    <div class="img-placeholder">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none"
+           stroke="#1a3a2a" stroke-width="1">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <circle cx="8.5" cy="8.5" r="1.5"/>
+        <polyline points="21 15 16 10 5 21"/>
+      </svg>
+      <span>IMAGE REDACTED</span>
+    </div>
+
+    <!-- SOLD ゴム印 -->
+    <div class="sold-stamp-wrap">
+      <div class="sold-stamp">SOLD</div>
+    </div>
+  </div>
+
+  <div class="img-caption">
+    LISTING ID: 7f3a9c2e · EPK VERIFIED · VAULT ESCROW ONLY<br>
+    IMAGES MAY BE SUBJECT TO VENDOR OBFUSCATION
+  </div>
+</div>
+
+<!-- 右: 商品情報 -->
+<div class="product-info-col">
+
+  <div class="product-category">
+    Market <span>›</span> Lewd Goods <span>›</span> Worn Garments
+  </div>
+
+  <div class="product-title">
+    <span class="sold-tag">[SOLD]</span>
+    White Lace Lingerie Pants — Worn &amp; Sealed
+  </div>
+
+  <!-- 価格 -->
+  <div class="price-block">
+    <div class="price-row">
+      <span class="price-main">0.0031 OGI</span>
+      <span class="price-unit">OG INGOT</span>
+    </div>
+    <div class="price-equiv">
+      Secondary unit: <span>0.071 OGI (fractional)</span>
+    </div>
+    <div class="countdown-row">
+      LISTING EXPIRES: <span>--:--:--</span>
+    </div>
+  </div>
+
+  <!-- 出品者 -->
+  <div class="vendor-block">
+    <div class="vendor-icon">V</div>
+    <div>
+      <div class="vendor-name">vendor_e7c2a</div>
+      <div class="vendor-meta">
+        VERIFIED · 193 TRANSACTIONS · STEALTH SHIPPING · VAULT ONLY
+      </div>
+    </div>
+  </div>
+
+  <!-- 説明文 -->
+  <div class="desc-block">
+    <div class="block-label">// LISTING DESCRIPTION</div>
+    <div class="desc-text">
+      My ex's white lace panties.
+      She wore these for <span class="hl">3 days straight</span> —
+      you can imagine the rest.<br>
+      Took them before she noticed.
+      <span class="hl">Sealed fresh.</span>
+      One pair only.<br><br>
+      She has <span class="hl">absolutely no clue.</span><br>
+      Don't ask me anything. Just buy.
+    </div>
+  </div>
+
+  <!-- Jane Willow 補足 -->
+  <div class="source-block">
+    <div class="block-label">// SUBJECT PROFILE</div>
+    <div class="source-inner">
+      <div class="source-photo">
+        <!-- 証明写真: images/jane.jpg (3:4比率) -->
+        <img src="images/jane.jpg" alt="Jane Willow"
+             onerror="this.style.display='none'">
+        <div class="source-photo-ph">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+               stroke="#1a3a2a" stroke-width="1.2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+      </div>
+      <div class="source-info">
+        <div class="source-name">Jane Willow</div>
+        <div class="source-role">REGISTERED MODEL — EXTERNAL SOURCE</div>
+        <a class="source-link"
+           href="https://tadokoroikishima-ops.github.io/teatime-hill-willowVC10/profile.html"
+           target="_blank" rel="noopener noreferrer">
+          SOURCE: terra's-finest.com/models/jane-willow ↗
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- EPK（旧PGP） -->
+  <div class="epk-block">
+    <div class="block-label">// VENDOR EPK (ENCRYPTED PUBLIC KEY)</div>
+    <div class="epk-box">
+```
+
+—–BEGIN EPK PUBLIC KEY BLOCK—–
+mQINBF7x9AABEAD3kZx92mVqP1nT7fWoLcXa8BvYm3Rq
+Kp2nZoE4dXyV6hUwLm9sRtGbN1cQ8fPjAeKvM0TlDsYi
+xH7uBnCp3WoRqAzMt5VkJeN2Xs8LbFgQdYpTwUcHmRvE
+4f9aN2bXcVpQeL7mDsKjRtHwYuFoIgNzBkMxPvCaTlSd
+…truncated for operational security…
+—–END EPK PUBLIC KEY BLOCK—–
+</div>
+</div>
+
+```
+  <!-- 暗号メッセージ欄 -->
+  <div class="msg-block">
+    <div class="block-label">// SEND ENCRYPTED MESSAGE TO VENDOR</div>
+    <div class="msg-input-wrap">
+      <span class="msg-prefix">EPK_MSG ›</span>
+      <input class="msg-input" id="msgInput" type="text"
+             placeholder="TYPE ENCRYPTED MESSAGE TO VENDOR..."
+             onkeydown="if(event.key==='Enter') sendMsg()">
+      <button class="msg-send" onclick="sendMsg()">SEND</button>
+    </div>
+  </div>
+
+  <!-- VAULT（旧Escrow） -->
+  <div class="vault-block">
+    <svg class="vault-icon" width="14" height="14" viewBox="0 0 24 24"
+         fill="none" stroke="currentColor" stroke-width="1.5">
+      <rect x="3" y="11" width="18" height="11" rx="2"/>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      <circle cx="12" cy="16" r="1"/>
+    </svg>
+    <span>VAULT PROTECTION ACTIVE — FUNDS HELD UNTIL DELIVERY CONFIRMED BY BUYER</span>
+  </div>
+
+</div>
+```
+
+  </div>
+</main>
+
+<!-- ══ FOOTER ══ -->
+
+<footer class="site-footer">
+  <div class="footer-onion">cnndn3x7fq2kv9m.onion</div>
+  CANNOT DNM · NO LOGS · NO TRACES · ALL CONNECTIONS ENCRYPTED<br>
+  DO NOT ACCESS FROM CLEARNET · USE ONION BROWSER ONLY
+  <div class="footer-quote">
+    "██ wgah'nagl ████ fhtagn —<br>
+    th' ██████ hath no ████ for those who ██ beyond<br>
+    th' ████ veil of ██████."
+  </div>
+</footer>
+
+</div><!-- /page -->
+<script src="app.js"></script>
+</body>
+</html>
