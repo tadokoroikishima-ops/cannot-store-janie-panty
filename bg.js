@@ -1,0 +1,205 @@
+/* ═══════════════════════════════════════════
+Cannot DNM — bg.js  v3
+渦巻き + 四方から触手（完全書き直し）
+═══════════════════════════════════════════ */
+(function () {
+
+/* ── Canvas 作成 ── */
+var cv  = document.createElement(‘canvas’);
+cv.id   = ‘bgCanvas’;
+cv.style.position      = ‘fixed’;
+cv.style.top           = ‘0’;
+cv.style.left          = ‘0’;
+cv.style.width         = ‘100%’;
+cv.style.height        = ‘100%’;
+cv.style.zIndex        = ‘0’;
+cv.style.pointerEvents = ‘none’;
+document.body.appendChild(cv);
+
+var ctx = cv.getContext(‘2d’);
+var W = 0, H = 0;
+var t = 0;
+
+function resize() {
+W = cv.width  = window.innerWidth;
+H = cv.height = window.innerHeight;
+}
+window.addEventListener(‘resize’, resize);
+resize();
+
+var G  = ‘0,255,136’;
+var GD = ‘0,160,80’;
+
+/* ═══════════════════════════
+渦巻き
+═══════════════════════════ */
+function drawVortex() {
+var cx = W * 0.5, cy = H * 0.5;
+var maxR = Math.min(W, H) * 0.5;
+var arms = 6, lines = 38;
+
+```
+for (var a = 0; a < arms; a++) {
+  var aOff = (a / arms) * Math.PI * 2;
+  for (var li = 0; li < lines; li++) {
+    var p    = li / lines;
+    var seed = a * 1000 + li * 7;
+    var wob  = Math.sin(seed * 0.31 + t * 0.38) * 0.20
+             + Math.cos(seed * 0.71 + t * 0.23) * 0.10;
+
+    var ang0 = aOff + p * Math.PI * 3.6 + t * 0.10 + wob;
+    var r0   = maxR * (0.06 + p * 0.94);
+    var x0   = cx + Math.cos(ang0) * r0;
+    var y0   = cy + Math.sin(ang0) * r0;
+
+    var ang1 = ang0 + Math.PI * 0.32 + wob * 0.4;
+    var r1   = r0 * (0.60 + Math.sin(t * 0.28 + seed) * 0.06);
+    var x1   = cx + Math.cos(ang1) * r1;
+    var y1   = cy + Math.sin(ang1) * r1;
+
+    var cpA = (ang0 + ang1) * 0.5 + 0.38;
+    var cpR = (r0 + r1) * 0.5 * (1.08 + Math.sin(t * 0.19 + seed) * 0.10);
+    var cpx = cx + Math.cos(cpA) * cpR;
+    var cpy = cy + Math.sin(cpA) * cpR;
+
+    var al = (0.10 + p * 0.06) * (0.65 + Math.sin(t * 0.5 + seed) * 0.35);
+    var lw = 0.45 + (1 - p) * 1.1;
+
+    ctx.beginPath();
+    ctx.moveTo(x0, y0);
+    ctx.quadraticCurveTo(cpx, cpy, x1, y1);
+    ctx.strokeStyle = 'rgba(' + G + ',' + al + ')';
+    ctx.lineWidth   = lw;
+    ctx.stroke();
+  }
+}
+```
+
+}
+
+/* ═══════════════════════════
+触手データ
+edge: 0=上 1=下 2=左 3=右 4=左上 5=右上 6=左下 7=右下
+═══════════════════════════ */
+var tentDefs = [
+{ edge:0, frac:0.20, baseAng: Math.PI*0.50, seed:10,  spd:0.008, len:0.26, thick:4.5 },
+{ edge:0, frac:0.50, baseAng: Math.PI*0.48, seed:27,  spd:0.007, len:0.30, thick:5.0 },
+{ edge:0, frac:0.80, baseAng: Math.PI*0.52, seed:43,  spd:0.009, len:0.24, thick:4.0 },
+{ edge:1, frac:0.15, baseAng:-Math.PI*0.50, seed:110, spd:0.007, len:0.28, thick:4.5 },
+{ edge:1, frac:0.50, baseAng:-Math.PI*0.52, seed:127, spd:0.009, len:0.32, thick:5.5 },
+{ edge:1, frac:0.80, baseAng:-Math.PI*0.48, seed:143, spd:0.008, len:0.25, thick:4.0 },
+{ edge:2, frac:0.20, baseAng: Math.PI*0.02, seed:210, spd:0.008, len:0.27, thick:4.0 },
+{ edge:2, frac:0.55, baseAng:-Math.PI*0.03, seed:227, spd:0.007, len:0.31, thick:5.0 },
+{ edge:2, frac:0.80, baseAng: Math.PI*0.04, seed:243, spd:0.009, len:0.24, thick:4.5 },
+{ edge:3, frac:0.25, baseAng: Math.PI*1.01, seed:310, spd:0.007, len:0.28, thick:4.5 },
+{ edge:3, frac:0.55, baseAng: Math.PI*0.99, seed:327, spd:0.009, len:0.30, thick:5.0 },
+{ edge:3, frac:0.80, baseAng: Math.PI*1.02, seed:343, spd:0.008, len:0.25, thick:4.0 },
+{ edge:4, frac:0, baseAng: Math.PI*0.22, seed:400, spd:0.007, len:0.30, thick:5.0 },
+{ edge:4, frac:0, baseAng: Math.PI*0.30, seed:405, spd:0.009, len:0.25, thick:4.0 },
+{ edge:5, frac:0, baseAng: Math.PI*0.72, seed:410, spd:0.008, len:0.28, thick:5.0 },
+{ edge:5, frac:0, baseAng: Math.PI*0.80, seed:415, spd:0.007, len:0.24, thick:4.0 },
+{ edge:6, frac:0, baseAng:-Math.PI*0.22, seed:420, spd:0.009, len:0.30, thick:5.0 },
+{ edge:6, frac:0, baseAng:-Math.PI*0.30, seed:425, spd:0.007, len:0.25, thick:4.0 },
+{ edge:7, frac:0, baseAng:-Math.PI*0.72, seed:430, spd:0.008, len:0.28, thick:5.0 },
+{ edge:7, frac:0, baseAng:-Math.PI*0.80, seed:435, spd:0.009, len:0.24, thick:4.0 }
+];
+
+function getOrigin(d) {
+switch (d.edge) {
+case 0: return [W * d.frac, 0];
+case 1: return [W * d.frac, H];
+case 2: return [0, H * d.frac];
+case 3: return [W, H * d.frac];
+case 4: return [0, 0];
+case 5: return [W, 0];
+case 6: return [0, H];
+case 7: return [W, H];
+default: return [0, 0];
+}
+}
+
+function drawTentacle(d) {
+var o  = getOrigin(d);
+var ox = o[0], oy = o[1];
+var L  = Math.min(W, H) * d.len;
+var ph = d.seed * 0.017 + t * d.spd * 60;
+var seg = 22;
+var pts = [];
+
+```
+for (var i = 0; i <= seg; i++) {
+  var fr  = i / seg;
+  var ang = d.baseAng
+          + Math.sin(ph + fr * Math.PI * 2.1) * 0.58
+          + Math.cos(ph * 0.68 + fr * Math.PI * 1.5 + d.seed * 0.01) * 0.30
+          + Math.sin(ph * 1.25 + fr * Math.PI * 3.2 + d.seed * 0.003) * 0.14;
+  var dist = fr * L;
+  pts.push([ox + Math.cos(ang) * dist, oy + Math.sin(ang) * dist]);
+}
+
+for (var j = 0; j < pts.length - 1; j++) {
+  var fr2   = j / (pts.length - 1);
+  var taper = Math.pow(1 - fr2, 0.52);
+  var al    = (0.18 + taper * 0.18) * (0.75 + Math.sin(ph + j * 0.4) * 0.25);
+  var lw    = Math.max(0.3, d.thick * taper);
+
+  ctx.beginPath();
+  ctx.moveTo(pts[j][0],   pts[j][1]);
+  ctx.lineTo(pts[j+1][0], pts[j+1][1]);
+  ctx.strokeStyle = 'rgba(' + G + ',' + al + ')';
+  ctx.lineWidth   = lw;
+  ctx.lineCap     = 'round';
+  ctx.stroke();
+}
+
+for (var k = 3; k < pts.length - 2; k += 3) {
+  var fr3    = k / (pts.length - 1);
+  var taper3 = Math.pow(1 - fr3, 0.52);
+  var sr     = d.thick * taper3 * 0.36;
+  if (sr < 0.5) continue;
+  var al3 = 0.20 * taper3;
+
+  ctx.beginPath();
+  ctx.arc(pts[k][0], pts[k][1], sr, 0, Math.PI * 2);
+  ctx.fillStyle = 'rgba(' + GD + ',' + al3 + ')';
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.arc(pts[k][0], pts[k][1], sr, 0, Math.PI * 2);
+  ctx.strokeStyle = 'rgba(' + G + ',' + (al3 * 1.5) + ')';
+  ctx.lineWidth   = 0.45;
+  ctx.stroke();
+}
+
+var last  = pts[pts.length - 1];
+var prev  = pts[Math.max(0, pts.length - 4)];
+var tipR  = d.thick * 0.20;
+if (tipR > 0.8) {
+  var ta = Math.atan2(last[1] - prev[1], last[0] - prev[0]);
+  ctx.beginPath();
+  ctx.arc(
+    last[0] + Math.cos(ta + Math.PI * 0.5) * tipR,
+    last[1] + Math.sin(ta + Math.PI * 0.5) * tipR,
+    tipR, 0, Math.PI * 2
+  );
+  ctx.fillStyle = 'rgba(' + G + ',0.09)';
+  ctx.fill();
+}
+```
+
+}
+
+/* ── メインループ ── */
+function loop() {
+ctx.clearRect(0, 0, W, H);
+drawVortex();
+for (var i = 0; i < tentDefs.length; i++) {
+drawTentacle(tentDefs[i]);
+}
+t += 0.016;
+requestAnimationFrame(loop);
+}
+
+loop();
+
+})();
